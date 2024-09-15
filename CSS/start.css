@@ -2,6 +2,7 @@ body {
     font-family: "Ysabeau Infant", sans-serif;
     margin-left: 15%;
     margin-right: 15%;
+    background-color: #FCFAEE;
 }
 
 /* Logo */
@@ -49,13 +50,17 @@ body {
 /* === === === */
 
 /* Sociale */
-.social-icons {
-    border: 2px solid black;
-    height: 300px;
+.social-icons-area {
+    /* border: 2px solid black; */
+    height: 100px;
+    width: 100%;
     margin-bottom: 10px;
-    display: grid;
-    place-items: center;
     display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+.social-icons-area a {
+    margin: 10px;
 }
 /* === === === */
 
