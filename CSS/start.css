@@ -2,12 +2,13 @@ body {
     font-family: "Ysabeau Infant", sans-serif;
     margin-left: 15%;
     margin-right: 15%;
-    background-color: #FCFAEE;
+    background-color: #FEFAE0;
 }
 
 /* Logo */
 .logo h1 {
-    font-family: "Bodoni Moda SC", serif;
+    /* font-family: "Bodoni Moda SC", serif; STARE */
+    font-family: "Ribeye Marrow", serif;
     text-align: center;
     font-size: 60px;
     border-bottom: 7px double black;
@@ -25,7 +26,7 @@ body {
 /* Powitanie */
 .welcome {
     border: 2px solid black;
-    height: 100px;
+    height: auto;
     text-align: center;
     margin-bottom: 10px;
 }
@@ -65,10 +66,51 @@ body {
 /* === === === */
 
 /* Kontakt */
-.contact {
-    border: 2px solid black;
-    height: 200px;
-    text-align: center;
-    margin-bottom: 10px;
+footer {
+    /* border: 2px solid black; */
+    width: 100vw;
+    margin-left: -15vw;
+    margin-right: -15vw;
+    position: absolute;
+    background: linear-gradient(to right, #B99470, #FEFAE0);
+    padding: 100px 0 30px;
+    border-top-left-radius: 125px;
+    font-size: 14px;
 }
+.row {
+    width: 85%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+.col {
+    flex-basis: 25%;
+    padding: 10px;
+}
+.col .logo{
+    width: 230px;
+    margin-bottom: 20px;
+}
+.col h3 {
+    width: fit-content;
+    margin-bottom: 30px;
+    position: relative;
+}
+.email-id {
+    width: fit-content;
+    border-bottom: 1px solid #555050;
+    margin: 10px 0;
+}
+ul {
+    padding: 0;
+}
+ul li {
+    list-style: none;
+    margin-bottom: 9px;
+}
+ul li a {
+    text-decoration: none;
+} 
 /* === === === */
