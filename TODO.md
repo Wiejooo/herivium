@@ -1,7 +1,7 @@
 # TODO
-- Przerobić stronę na jednolitą np.
-https://keychronpoland.com/?srsltid=AfmBOoriSpjFPe-Zzy6Y5XV0Bn9jS6-TywAZdV3HvCW0LtWZsjHKsNbi
-https://funkeys.pl/?gad_source=1&gclid=Cj0KCQjwrp-3BhDgARIsAEWJ6SwcQxJfRPiUU7zKXjf-r_n5uBdowtrvRTDCyq4_u0AKpRdSPPiRSVsaAgIqEALw_wcB
+- Logi duże na wejści -> jeden scroll i przenosi się do navbaru
+- dodać navbar sticky na górze, minimalistyczny jak w gucci
+https://www.gucci.com/pl/en_gb/?srsltid=AfmBOopGmuBtWen3scW_I_2Ze2wTW8m2vivUf5maj3WT3QCmpIi3_AYl
 
 # herivium
 Show page for friend

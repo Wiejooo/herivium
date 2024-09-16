@@ -1,8 +1,8 @@
 body {
     font-family: "Ysabeau Infant", sans-serif;
-    margin-left: 15%;
-    margin-right: 15%;
     background-color: #FEFAE0;
+    margin: 0;
+
 }
 
 /* Logo */
@@ -25,10 +25,20 @@ body {
 
 /* Powitanie */
 .welcome {
-    border: 2px solid black;
+    /* border: 2px solid black; */
     height: auto;
     text-align: center;
     margin-bottom: 10px;
+    background-image: url('../img/kobieta-chusta.jpg');
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 800px;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    
 }
 /* === === === */
 
@@ -73,8 +83,6 @@ body {
 footer {
     /* border: 2px solid black; */
     width: 100vw;
-    margin-left: -15vw;
-    margin-right: -15vw;
     position: absolute;
     background: linear-gradient(to right, #B99470, #FEFAE0);
     padding: 100px 0 30px;
