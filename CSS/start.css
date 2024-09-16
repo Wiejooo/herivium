@@ -62,6 +62,10 @@ body {
 }
 .social-icons-area a {
     margin: 10px;
+    transition: transform 0.3s ease;
+}
+.social-icons-area a:hover{
+    transform: translateY(-5px);
 }
 /* === === === */
 
