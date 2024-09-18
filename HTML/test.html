@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sticky Navbar z Logo</title>
+    <style>
+        /* Stylizacja ogólna */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Navbar - początkowo przeźroczysty */
+        nav {
+            position: sticky;
+            top: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0); /* Transparentny */
+            padding: 10px 20px;
+            text-align: right; /* Tekst wyrównany do prawej strony */
+            z-index: 1000;
+            transition: background-color 0.5s ease; /* Płynna zmiana koloru tła */
+        }
+
+        /* Navbar po przewinięciu */
+        nav.scrolled {
+            background-color: rgba(0, 0, 0, 0.8); /* Ciemniejszy, lekko przezroczysty */
+        }
+
+        /* Linki w navbarze */
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 14px 20px;
+            display: inline-block;
+        }
+
+        /* Linki po najechaniu myszą */
+        nav a:hover {
+            background-color: #575757;
+        }
+
+        /* Logo */
+        .logo-container {
+            position: relative;
+            width: 100%;
+            text-align: center;
+            transition: all 0.5s ease; /* Płynna zmiana */
+            margin-top: 50px; /* Początkowy dystans od góry */
+        }
+
+        .logo-container.scrolled {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            text-align: center; /* Wyśrodkowanie logo po przewinięciu */
+            padding: 10px 0;
+            margin-top: 0;
+            z-index: 1001; /* Wyższy z-index, aby było nad innymi elementami */
+        }
+
+        .logo {
+            font-size: 3rem; /* Duży rozmiar na początku */
+            font-weight: bold;
+            color: #333;
+            transition: all 0.5s ease; /* Płynna zmiana */
+        }
+
+        .logo-container.scrolled .logo {
+            font-size: 1.5rem; /* Zmniejszenie logo po przewinięciu */
+            color: #fff; /* Można zmienić kolor, jeśli chcesz */
+        }
+
+        /* Treść strony */
+        .content {
+            height: 1500px; /* Sztuczna wysokość, aby pokazać przewijanie */
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav id="navbar">
+        <a href="#">Strona Główna</a>
+        <a href="#">O nas</a>
+        <a href="#">Usługi</a>
+        <a href="#">Kontakt</a>
+    </nav>
+
+    <!-- Logo -->
+    <div class="logo-container" id="logoContainer">
+        <div class="logo">Moje Logo</div>
+    </div>
+
+    <div class="content">
+        <h1>Treść strony</h1>
+        <p>Przewijaj stronę, aby zobaczyć efekt zmiany rozmiaru logo oraz tła navbaru.</p>
+    </div>
+
+    <script>
+        // Nasłuchiwanie na zdarzenie przewijania
+        window.addEventListener('scroll', function() {
+            var logoContainer = document.getElementById('logoContainer');
+            var navbar = document.getElementById('navbar');
+
+            if (window.scrollY > 50) {
+                logoContainer.classList.add('scrolled');
+                navbar.classList.add('scrolled');
+            } else {
+                logoContainer.classList.remove('scrolled');
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
+
+</body>
+</html>

@@ -6,20 +6,51 @@ body {
 }
 
 /* Logo */
-.logo h1 {
+.logo-container {
     /* font-family: "Bodoni Moda SC", serif; STARE */
     font-family: "Ribeye Marrow", serif;
+    position: relative;
+    width: 100%;
     text-align: center;
-    font-size: 60px;
-    border-bottom: 7px double black;
+    transition: all 1s ease;
+    margin-top: 50px;
+}
+.logo-container.scrolled {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    text-align: center; /* Wyśrodkowanie logo po przewinięciu */
+    padding: 10px 0;
+    margin-top: 0;
+    z-index: 1001; /* Wyższy z-index, aby było nad innymi elementami */
+}
+.logo {
+    font-size: 85px; /* Duży rozmiar na początku */
+    color: #fff;
+    transition: all 1.5s ease; /* Płynna zmiana */
+}
+.logo-container.scrolled .logo {
+    font-size: 1.5rem; /* Zmniejszenie logo po przewinięciu */
+    color: #787676;
 }
 /* === === === */
 
 /* Navbar*/
 .navbar {
-    border: 2px solid black;
-    text-align: center;
-    margin-bottom: 10px;
+    position: sticky;
+    height: 45px;
+    top: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0); /* Transparentny */
+    padding: 10px 20px;
+    text-align: right; /* Tekst wyrównany do prawej strony */
+    z-index: 1000;
+    transition: background-color 0.5s ease; /* Płynna zmiana koloru tła */
+}
+nav.scrolled {
+    background-color: rgba(0, 0, 0, 0.8);
 }
 /* === === === */
 
@@ -34,7 +65,7 @@ body {
     background-position: center top;
     background-size: cover;
     background-attachment: fixed;
-    height: 800px;
+    height: 700px;
     color: white;
     font-size: 20px;
     text-align: center;
