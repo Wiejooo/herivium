@@ -3,120 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sticky Navbar z Logo</title>
+    <title>Scroll Reveal</title>
     <style>
-        /* Stylizacja ogólna */
         body {
-            margin: 0;
             font-family: Arial, sans-serif;
         }
 
-        /* Navbar - początkowo przeźroczysty */
-        nav {
-            position: sticky;
-            top: 0;
-            width: 100%;
-            background-color: rgba(0, 0, 0, 0); /* Transparentny */
-            padding: 10px 20px;
-            text-align: right; /* Tekst wyrównany do prawej strony */
-            z-index: 1000;
-            transition: background-color 0.5s ease; /* Płynna zmiana koloru tła */
+        .reveal-box {
+            opacity: 0; /* Początkowo niewidoczny */
+            transform: translateX(-100%); /* Przesunięty na lewo */
+            transition: opacity 0.5s ease, transform 0.5s ease; /* Efekt przejścia */
+            height: 100px; /* Wysokość divu */
+            background-color: lightblue; /* Kolor tła */
+            margin-top: 20px; /* Margines na górze */
         }
 
-        /* Navbar po przewinięciu */
-        nav.scrolled {
-            background-color: rgba(0, 0, 0, 0.8); /* Ciemniejszy, lekko przezroczysty */
+        .reveal-box.visible {
+            opacity: 1; /* Widoczny */
+            transform: translateX(0); /* Wraca do oryginalnej pozycji */
         }
 
-        /* Linki w navbarze */
-        nav a {
-            color: white;
-            text-decoration: none;
-            padding: 14px 20px;
-            display: inline-block;
-        }
-
-        /* Linki po najechaniu myszą */
-        nav a:hover {
-            background-color: #575757;
-        }
-
-        /* Logo */
-        .logo-container {
-            position: relative;
-            width: 100%;
-            text-align: center;
-            transition: all 0.5s ease; /* Płynna zmiana */
-            margin-top: 50px; /* Początkowy dystans od góry */
-        }
-
-        .logo-container.scrolled {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            width: 100%;
-            text-align: center; /* Wyśrodkowanie logo po przewinięciu */
-            padding: 10px 0;
-            margin-top: 0;
-            z-index: 1001; /* Wyższy z-index, aby było nad innymi elementami */
-        }
-
-        .logo {
-            font-size: 3rem; /* Duży rozmiar na początku */
-            font-weight: bold;
-            color: #333;
-            transition: all 0.5s ease; /* Płynna zmiana */
-        }
-
-        .logo-container.scrolled .logo {
-            font-size: 1.5rem; /* Zmniejszenie logo po przewinięciu */
-            color: #fff; /* Można zmienić kolor, jeśli chcesz */
-        }
-
-        /* Treść strony */
-        .content {
-            height: 1500px; /* Sztuczna wysokość, aby pokazać przewijanie */
-            padding: 20px;
-            background-color: #f4f4f4;
+        .spacer {
+            height: 800px; /* Spacer dla przewijania */
         }
     </style>
 </head>
 <body>
-
-    <!-- Navbar -->
-    <nav id="navbar">
-        <a href="#">Strona Główna</a>
-        <a href="#">O nas</a>
-        <a href="#">Usługi</a>
-        <a href="#">Kontakt</a>
-    </nav>
-
-    <!-- Logo -->
-    <div class="logo-container" id="logoContainer">
-        <div class="logo">Moje Logo</div>
-    </div>
-
     <div class="content">
-        <h1>Treść strony</h1>
-        <p>Przewijaj stronę, aby zobaczyć efekt zmiany rozmiaru logo oraz tła navbaru.</p>
+        <p>Przewiń w dół, aby zobaczyć efekt.</p>
+        <div class="spacer"></div>
+        <div class="reveal-box">To jest ukryty div!</div>
     </div>
-
     <script>
-        // Nasłuchiwanie na zdarzenie przewijania
         window.addEventListener('scroll', function() {
-            var logoContainer = document.getElementById('logoContainer');
-            var navbar = document.getElementById('navbar');
+            const revealBox = document.querySelector('.reveal-box');
+            const boxPosition = revealBox.getBoundingClientRect().top; // Pozycja divu
+            const screenPosition = window.innerHeight; // Wysokość ekranu
 
-            if (window.scrollY > 50) {
-                logoContainer.classList.add('scrolled');
-                navbar.classList.add('scrolled');
-            } else {
-                logoContainer.classList.remove('scrolled');
-                navbar.classList.remove('scrolled');
+            if (boxPosition < screenPosition) {
+                revealBox.classList.add('visible'); // Dodaje klasę, gdy div jest widoczny
             }
         });
     </script>
-
 </body>
 </html>

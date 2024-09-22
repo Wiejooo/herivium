@@ -33,30 +33,38 @@ body {
 }
 .logo-container.scrolled .logo {
     font-size: 1.5rem; /* Zmniejszenie logo po przewinięciu */
-    color: #787676;
+    color: #0a0a0a;
 }
 /* === === === */
 
 /* Navbar*/
 .navbar {
-    position: sticky;
+    position: fixed;
+    width: 100%;
     height: 45px;
     top: 0;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0); /* Transparentny */
+    background-color: rgb(0, 0, 0); /* Transparentny */
     padding: 10px 20px;
     text-align: right; /* Tekst wyrównany do prawej strony */
     z-index: 1000;
     transition: background-color 0.5s ease; /* Płynna zmiana koloru tła */
 }
 nav.scrolled {
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(122, 120, 120, 0.8);
+}
+nav a{
+    padding-right: 60px;
+    text-decoration: none;
+    color: white;
+}
+.nav-text {
+    margin-right: 100px;
 }
 /* === === === */
 
 /* Powitanie */
 .welcome {
-    /* border: 2px solid black; */
+    position: relative;
     height: auto;
     text-align: center;
     margin-bottom: 10px;
@@ -65,20 +73,61 @@ nav.scrolled {
     background-position: center top;
     background-size: cover;
     background-attachment: fixed;
-    height: 700px;
+    height: 100vh;
     color: white;
     font-size: 20px;
     text-align: center;
-    
 }
 /* === === === */
 
 /* Chusty */
 .scarf {
-    border: 2px solid black;
-    height: 100px;
+    display: flex; /* Ustawienie flexbox na kontenerze */
+    justify-content: space-between; /* Rozdziela kolumny równo */
+    gap: 20px; /* Opcjonalne: dodanie odstępów między kolumnami */
+    padding: 20px;
+    margin-left: 300px;
+    margin-right: 300px;
+    align-items: stretch;
+}
+.scarf h1 {
     text-align: center;
-    margin-bottom: 10px;
+    text-decoration: underline;
+}
+.column-1 {
+    flex: 1; /* Sprawia, że każda kolumna zajmuje tyle samo miejsca */
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+    font-size: 60px;
+    text-align: left;
+    font-weight: bold;
+    line-height: 1.0;
+}
+.column-2 {
+    flex: 1; /* Sprawia, że każda kolumna zajmuje tyle samo miejsca */
+    padding: 20px;
+    text-align: center;
+    text-align: left;
+}
+.centered-image {
+    display: block; /* Umożliwia wyśrodkowanie */
+    margin: 0 auto; /* Wyśrodkowanie obrazka */
+    max-width: 100%; /* Umożliwia responsywność */
+    height: auto; /* Zachowuje proporcje */
+    height: 200px;
+    width: 300px;
+    border-radius: 18%;
+}
+.column-3 {
+    flex: 1; /* Sprawia, że każda kolumna zajmuje tyle samo miejsca */
+    padding: 20px;
+    text-align: center;
+}
+
+.dupa {
+    color: brown;
 }
 /* === === === */
 
