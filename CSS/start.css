@@ -81,53 +81,30 @@ nav a{
 /* === === === */
 
 /* Chusty */
-.scarf {
-    display: flex; /* Ustawienie flexbox na kontenerze */
-    justify-content: space-between; /* Rozdziela kolumny równo */
-    gap: 20px; /* Opcjonalne: dodanie odstępów między kolumnami */
-    padding: 20px;
-    margin-left: 300px;
-    margin-right: 300px;
-    align-items: stretch;
+section{
+    display: grid;
+    place-items: center;
+    align-content: center;
+    min-height: 100vh;
 }
-.scarf h1 {
+section h1 {
     text-align: center;
     text-decoration: underline;
 }
-.column-1 {
-    flex: 1; /* Sprawia, że każda kolumna zajmuje tyle samo miejsca */
-    display: flex;
-    align-items: center;
-    padding: 20px;
-    text-align: center;
-    font-size: 60px;
-    text-align: left;
-    font-weight: bold;
-    line-height: 1.0;
+section img {
+    height: 100px;
+    border-radius: 20%;
 }
-.column-2 {
-    flex: 1; /* Sprawia, że każda kolumna zajmuje tyle samo miejsca */
-    padding: 20px;
-    text-align: center;
-    text-align: left;
+.hidden {
+    opacity: 0;
+    transition: all 2s;
+    filter: blur(5px);
+    /* transform: translateX(-100%) */
 }
-.centered-image {
-    display: block; /* Umożliwia wyśrodkowanie */
-    margin: 0 auto; /* Wyśrodkowanie obrazka */
-    max-width: 100%; /* Umożliwia responsywność */
-    height: auto; /* Zachowuje proporcje */
-    height: 200px;
-    width: 300px;
-    border-radius: 18%;
-}
-.column-3 {
-    flex: 1; /* Sprawia, że każda kolumna zajmuje tyle samo miejsca */
-    padding: 20px;
-    text-align: center;
-}
-
-.dupa {
-    color: brown;
+.show {
+    opacity: 1;
+    filter: blur(0);
+    /* transform: translateX(0) */
 }
 /* === === === */
 

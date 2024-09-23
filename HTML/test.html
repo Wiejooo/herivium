@@ -8,42 +8,56 @@
         body {
             font-family: Arial, sans-serif;
         }
-
-        .reveal-box {
-            opacity: 0; /* Początkowo niewidoczny */
-            transform: translateX(-100%); /* Przesunięty na lewo */
-            transition: opacity 0.5s ease, transform 0.5s ease; /* Efekt przejścia */
-            height: 100px; /* Wysokość divu */
-            background-color: lightblue; /* Kolor tła */
-            margin-top: 20px; /* Margines na górze */
+        section{
+            display: grid;
+            place-items: center;
+            align-content: center;
+            min-height: 100vh;
+        }
+        .conteiner{
+            display: grid;
+            place-items: center;
+            align-content: center;
+            min-height: 100vh;
         }
 
-        .reveal-box.visible {
-            opacity: 1; /* Widoczny */
-            transform: translateX(0); /* Wraca do oryginalnej pozycji */
+        .hidden {
+            opacity: 0;
+            transition: all 2s;
+            filter: blur(5px);
+            transform: translateX(-100%)
         }
-
-        .spacer {
-            height: 800px; /* Spacer dla przewijania */
+        .show {
+            opacity: 1;
+            filter: blur(0);
+            transform: translateX(0)
         }
     </style>
 </head>
 <body>
-    <div class="content">
+    <section class="hidden">
         <p>Przewiń w dół, aby zobaczyć efekt.</p>
-        <div class="spacer"></div>
-        <div class="reveal-box">To jest ukryty div!</div>
+    </section>
+    <div class="hidden conteiner">
+        <p>Przewiń w dół, aby zobaczyć efekt.</p>
     </div>
+    <section class="hidden">
+        <p>Przewiń w dół, aby zobaczyć efekt.</p>
+    </section>
     <script>
-        window.addEventListener('scroll', function() {
-            const revealBox = document.querySelector('.reveal-box');
-            const boxPosition = revealBox.getBoundingClientRect().top; // Pozycja divu
-            const screenPosition = window.innerHeight; // Wysokość ekranu
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                console.log(entry)
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show')
+                } else {
+                    entry.target.classList.remove('show')
+                }
+            })
+        })
 
-            if (boxPosition < screenPosition) {
-                revealBox.classList.add('visible'); // Dodaje klasę, gdy div jest widoczny
-            }
-        });
+        const hiddenElements = document.querySelectorAll('.hidden')
+        hiddenElements.forEach((el) => observer.observe(el))
     </script>
 </body>
 </html>
