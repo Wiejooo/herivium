@@ -44,13 +44,17 @@ body {
     height: 45px;
     top: 0;
     background-color: rgb(0, 0, 0); /* Transparentny */
-    padding: 10px 20px;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-top: 10px;
     text-align: right; /* Tekst wyrównany do prawej strony */
     z-index: 1000;
-    transition: background-color 0.5s ease; /* Płynna zmiana koloru tła */
+    transition: background-color 2s ease; /* Płynna zmiana koloru tła */
+    opacity: 0.5;
 }
 nav.scrolled {
     background-color: #FEFAE0;
+    opacity: 1;
 }
 .scrolled a{
     color: black;
@@ -62,6 +66,7 @@ nav a{
 }
 .nav-text {
     margin-right: 100px;
+    padding-top: 7px;
 }
 /* === === === */
 
