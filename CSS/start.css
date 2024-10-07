@@ -1,12 +1,11 @@
-body {
+body{
     font-family: "Ysabeau Infant", sans-serif;
     background-color: #FEFAE0;
     margin: 0;
-
 }
 
 /* Logo */
-.logo-container {
+.logo-container{
     /* font-family: "Bodoni Moda SC", serif; STARE */
     font-family: "Ribeye Marrow", serif;
     position: relative;
@@ -15,7 +14,7 @@ body {
     transition: all 1s ease;
     /* margin-top: 50px; */
 }
-.logo-container.scrolled {
+.logo-container.scrolled{
     position: fixed;
     top: 0;
     left: 0;
@@ -26,52 +25,16 @@ body {
     margin-top: 0;
     z-index: 1001; /* Wyższy z-index, aby było nad innymi elementami */
 }
-.logo {
+.logo{
     font-size: 85px; /* Duży rozmiar na początku */
     color: #fff;
     transition: all 1.5s ease; /* Płynna zmiana */
 }
-.logo-container.scrolled .logo {
+.logo-container.scrolled .logo{
     font-size: 1.5rem; /* Zmniejszenie logo po przewinięciu */
     color: #0a0a0a;
 }
-/* === === === */
-
-/* Navbar*/
-.navbar {
-    position: fixed;
-    width: 100%;
-    height: 45px;
-    top: 0;
-    background-color: rgb(0, 0, 0); /* Transparentny */
-    padding-right: 20px;
-    padding-left: 20px;
-    padding-top: 10px;
-    text-align: right; /* Tekst wyrównany do prawej strony */
-    z-index: 1000;
-    transition: background-color 2s ease; /* Płynna zmiana koloru tła */
-    opacity: 0.5;
-}
-nav.scrolled {
-    background-color: #FEFAE0;
-    opacity: 1;
-}
-.scrolled a{
-    color: black;
-}
-nav a{
-    padding-right: 60px;
-    text-decoration: none;
-    color: white;
-}
-.nav-text {
-    margin-right: 100px;
-    padding-top: 7px;
-}
-/* === === === */
-
-/* Powitanie */
-.welcome {
+.welcome{
     position: relative;
     height: auto;
     text-align: center;
@@ -86,7 +49,51 @@ nav a{
     font-size: 20px;
     text-align: center;
     display: flex;
-    justify-content: center;;
+    justify-content: center;
+}
+/* === === === */
+
+/* Navbar*/
+.navbar{
+    position: fixed;
+    width: 100%;
+    height: 45px;
+    top: 0;
+    background-color: rgb(0, 0, 0); /* Transparentny */
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-top: 10px;
+    text-align: right; /* Tekst wyrównany do prawej strony */
+    z-index: 1000;
+    transition: background-color 2s ease; /* Płynna zmiana koloru tła */
+    opacity: 0;
+}
+nav.scrolled{
+    background-color: #FEFAE0;
+    opacity: 1;
+}
+.scrolled a{
+    color: black;
+}
+nav a{
+    padding-right: 60px;
+    text-decoration: none;
+    color: white;
+}
+.nav-text{
+    margin-right: 100px;
+    padding-top: 7px;
+}
+/* === === === */
+
+/* Powitanie */
+.introduce{
+    margin: 40px;
+    margin-left: 70px;
+    margin-right: 70px;
+}
+.introduce h1{
+    text-align: center;
 }
 /* === === === */
 
@@ -97,21 +104,21 @@ section{
     align-content: center;
     min-height: 100vh;
 }
-section h1 {
+section h1{
     text-align: center;
     text-decoration: underline;
 }
-section img {
+section img{
     height: 100px;
     border-radius: 20%;
 }
-.hidden {
+.hidden{
     opacity: 0;
     transition: all 1.5s;
     filter: blur(5px);
     transform: translateX(-100%)
 }
-.show {
+.show{
     opacity: 1;
     filter: blur(0);
     transform: translateX(0)
@@ -119,7 +126,7 @@ section img {
 /* === === === */
 
 /* Ubrania */
-.clothes {
+.clothes{
     border: 2px solid black;
     height: 100px;
     text-align: center;
@@ -128,7 +135,7 @@ section img {
 /* === === === */
 
 /* Sociale */
-.social-icons-area {
+.social-icons-area{
     /* border: 2px solid black; */
     height: 100px;
     width: 100%;
@@ -137,7 +144,7 @@ section img {
     justify-content: center;
     align-items: center;
 }
-.social-icons-area a {
+.social-icons-area a{
     margin: 10px;
     transition: transform 0.3s ease;
 }
@@ -147,7 +154,7 @@ section img {
 /* === === === */
 
 /* Kontakt */
-footer {
+footer{
     /* border: 2px solid black; */
     width: 100vw;
     position: absolute;
@@ -156,7 +163,7 @@ footer {
     border-top-left-radius: 125px;
     font-size: 14px;
 }
-.row {
+.row{
     width: 85%;
     margin: auto;
     display: flex;
@@ -164,7 +171,7 @@ footer {
     align-items: flex-start;
     justify-content: space-between;
 }
-.col {
+.col{
     flex-basis: 25%;
     padding: 10px;
 }
@@ -172,24 +179,154 @@ footer {
     width: 230px;
     margin-bottom: 20px;
 }
-.col h3 {
+.col h3{
     width: fit-content;
     margin-bottom: 30px;
     position: relative;
 }
-.email-id {
+.email-id{
     width: fit-content;
     border-bottom: 1px solid #555050;
     margin: 10px 0;
 }
-ul {
+ul{
     padding: 0;
 }
-ul li {
+ul li{
     list-style: none;
     margin-bottom: 9px;
 }
-ul li a {
+ul li a{
     text-decoration: none;
 } 
+/* === === === */
+
+/* Zdjęcia */
+.sliders{
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    overflow: hidden;
+}
+
+.imgContainer{
+    width: 100%;
+    height: 600px;
+    position: absolute;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 1s;
+}
+
+.slide_div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 30px 0 30px;
+}
+
+img{
+    position: relative;
+    height: 370px;
+    width: 240px;
+    filter: saturate(10%);
+    transition: 0.7s;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 20px;
+}
+
+.button{
+    position: absolute;
+    width: 240px;
+    height: 370px;
+    transition: 0.7s;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+
+}
+.button:hover{
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+#slider1:target ~ .imgContainer #img1,
+#slider1:target ~ .imgContainer #button1{
+    width: 390px;
+    height: 600px;
+    background-color: transparent;
+    filter: saturate(100%);
+}
+
+#slider2:target ~ .imgContainer #img2,
+#slider2:target ~ .imgContainer #button2{
+    width: 390px;
+    height: 600px;
+    background-color: transparent;
+    filter: saturate(100%);
+}
+
+#slider3:target ~ .imgContainer #img3,
+#slider3:target ~ .imgContainer #button3{
+    width: 390px;
+    height: 600px;
+    background-color: transparent;
+    filter: saturate(100%);
+}
+
+#slider4:target ~ .imgContainer #img4,
+#slider4:target ~ .imgContainer #button4{
+    width: 390px;
+    height: 600px;
+    background-color: transparent;
+    filter: saturate(100%);
+}
+
+#slider5:target ~ .imgContainer #img5,
+#slider5:target ~ .imgContainer #button5{
+    width: 390px;
+    height: 600px;
+    background-color: transparent;
+    filter: saturate(100%);
+}
+
+#slider6:target ~ .imgContainer #img6,
+#slider6:target ~ .imgContainer #button6{
+    width: 390px;
+    height: 600px;
+    background-color: transparent;
+    filter: saturate(100%);
+}
+
+#slider7:target ~ .imgContainer #img7,
+#slider7:target ~ .imgContainer #button7{
+    width: 390px;
+    height: 600px;
+    background-color: transparent;
+    filter: saturate(100%);
+}
+
+#slider1:target ~ .imgContainer{
+    left: 60%;
+}
+#slider2:target ~ .imgContainer{
+    left: 40%;
+}
+#slider3:target ~ .imgContainer{
+    left: 20%;
+}
+#slider4:target ~ .imgContainer{
+    left: 0%;
+}
+#slider5:target ~ .imgContainer{
+    left: -20%;
+}
+#slider6:target ~ .imgContainer{
+    left: -40%;
+}
+#slider7:target ~ .imgContainer{
+    left: -60%;
+}
 /* === === === */

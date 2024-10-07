@@ -4,60 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scroll Reveal</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-        section{
-            display: grid;
-            place-items: center;
-            align-content: center;
-            min-height: 100vh;
-        }
-        .conteiner{
-            display: grid;
-            place-items: center;
-            align-content: center;
-            min-height: 100vh;
-        }
-
-        .hidden {
-            /* opacity: 0; */
-            transition: all 2s;
-            /* filter: blur(5px); */
-            transform: translateX(-100%)
-        }
-        .show {
-            opacity: 1;
-            filter: blur(0);
-            transform: translateX(0)
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="../CSS/start.css">
 </head>
 <body>
-    <section class="hidden">
-        <p>Przewiń w dół, aby zobaczyć efekt.</p>
-    </section>
-    <div class="hidden conteiner">
-        <p>Przewiń w dół, aby zobaczyć efekt.</p>
-    </div>
-    <section class="hidden">
-        <p>Przewiń w dół, aby zobaczyć efekt.</p>
-    </section>
-    <script>
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                console.log(entry)
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('show')
-                } else {
-                    entry.target.classList.remove('show')
-                }
-            })
-        })
+    <div class="sliders">
+        <span class="slider" id="slider1"></span>
+        <span class="slider" id="slider2"></span>
+        <span class="slider" id="slider3"></span>
+        <span class="slider" id="slider4"></span>
+        <span class="slider" id="slider5"></span>
+        <span class="slider" id="slider6"></span>
+        <span class="slider" id="slider7"></span>
+    
 
-        const hiddenElements = document.querySelectorAll('.hidden')
-        hiddenElements.forEach((el) => observer.observe(el))
-    </script>
+        <div class="imgContainer">
+            <div class="slide_div" id="slide_1">
+                <img src="/herivium/img/col-2-chusta.jpeg" alt="" class="img" id="img1">
+                <a href="#slider1" class="button" id="button1"></a>
+            </div>
+            <div class="slide_div" id="slide_2">
+                <img src="/herivium/img/col-2-chusta.jpeg" alt="" class="img" id="img2">
+                <a href="#slider2" class="button" id="button2"></a>
+            </div>
+            <div class="slide_div" id="slide_3">
+                <img src="/herivium/img/col-2-chusta.jpeg" alt="" class="img" id="img3">
+                <a href="#slider3" class="button" id="button3"></a>
+            </div>
+            <div class="slide_div" id="slide_4">
+                <img src="/herivium/img/col-2-chusta.jpeg" alt="" class="img" id="img4">
+                <a href="#slide41" class="button" id="button4"></a>
+            </div>
+            <div class="slide_div" id="slide_5">
+                <img src="/herivium/img/col-2-chusta.jpeg" alt="" class="img" id="img5">
+                <a href="#slider5" class="button" id="button5"></a>
+            </div>
+            <div class="slide_div" id="slide_6">
+                <img src="/herivium/img/col-2-chusta.jpeg" alt="" class="img" id="img6">
+                <a href="#slider6" class="button" id="button6"></a>
+            </div>
+            <div class="slide_div" id="slide_7">
+                <img src="/herivium/img/col-2-chusta.jpeg" alt="" class="img" id="img7">
+                <a href="#slider7" class="button" id="button7"></a>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
